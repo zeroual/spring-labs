@@ -1,12 +1,14 @@
 package com.polytech.repository;
 
 import com.polytech.business.Post;
+import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class JdbcPostRepository implements PostRepository {
     private  DataSource dataSource;
 
