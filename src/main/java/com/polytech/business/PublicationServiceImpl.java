@@ -2,11 +2,11 @@ package com.polytech.business;
 
 import com.polytech.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 public class PublicationServiceImpl implements PublicationService {
 
     private PostRepository postRepository;
