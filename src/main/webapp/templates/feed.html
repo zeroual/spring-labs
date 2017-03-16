@@ -1,16 +1,14 @@
-<%@ page import="com.polytech.business.Post" %>
-<%@ page import="java.util.List" %>
-<html lang="en">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Starter Template for Bootstrap</title>
 
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/main.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet"></link>
+    <link href="/assets/css/main.css" rel="stylesheet"></link>
 
 </head>
 
@@ -55,22 +53,16 @@
                 </div>
             </form>
         </div>
-        <%
-            List<Post> postList = (List<Post>) request.getAttribute("posts");
-        %>
-        <%
-            for (Post post : postList) {
-        %>
-        <div class="row feed">
+
+        <div class="row feed" th:each="post :${posts}">
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <%=post.getContent()%>
+                        <p th:text="${post.getContent()}"></p>
                     </div>
                 </div>
             </div>
         </div>
-        <%}%>
     </div>
 
 </div>
