@@ -10,7 +10,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @PropertySource("classpath:/application.properties")
-@ComponentScan(basePackages = {"com.polytech.repository","com.polytech.business"})
+@ComponentScan(basePackages = {"com.polytech.repository","com.polytech.business","com.polytech.web"})
 public class ApplicationConfig {
 
     @Value("${datasource.driverName}")
